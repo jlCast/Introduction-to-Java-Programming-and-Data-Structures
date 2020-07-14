@@ -1,0 +1,24 @@
+package chapter_10;
+
+public class Course {
+	private String courseName;
+	private String [] students=new String[100];
+	private int numberOfStudents=0;
+	
+	public Course(String courseName) {
+		this.courseName=courseName;
+	}
+	public String getCoursename() {
+		return courseName;
+	}
+	public void addStudent(String student) {
+		students[numberOfStudents]=student;
+		numberOfStudents++;
+	}
+	public String[] getStudents() {
+		return students;							
+	}
+	public int getNumberOfStudents() {
+		return numberOfStudents;
+	}	
+}
