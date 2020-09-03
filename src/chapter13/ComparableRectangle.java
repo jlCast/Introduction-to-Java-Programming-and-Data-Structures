@@ -17,6 +17,5 @@ public class ComparableRectangle extends Rectangle implements Comparable<Geometr
 	@Override
 	public String toString() {
 		return super.toString()+". Area: "+getArea();
-	}
-	
+	}	
 }

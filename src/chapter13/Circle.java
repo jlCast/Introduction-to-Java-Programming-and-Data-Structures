@@ -1,6 +1,8 @@
 package chapter13;
 
-public class Circle extends GeometricObject{
+import chapter13_exercises.Colorable;
+
+public class Circle extends GeometricObject implements Colorable, Comparable<GeometricObject>{
 	private double radius;
 	
 	public Circle() {
@@ -39,5 +41,18 @@ public class Circle extends GeometricObject{
 			return radius==((Circle)o).radius;
 		else
 			return false;
+	}
+	@Override
+	public void howToColor() {
+		System.out.println("Color the perimeter");
+	}
+	@Override
+	public int compareTo(GeometricObject o) {
+		if(getArea() > o.getArea())
+			return 1;
+		else if (getArea() < o.getArea())
+			return -1;
+		else
+			return 0;
 	}
 }

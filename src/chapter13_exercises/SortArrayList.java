@@ -1,7 +1,6 @@
 package chapter13_exercises;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class SortArrayList {
@@ -16,7 +15,7 @@ public class SortArrayList {
 			list.add(value);
 			value = input.nextInt();
 		}
-
+		input.close();
 		shuffle(list);
 		for(int i=0;i<list.size();i++) 
 			System.out.print(list.get(i)+" ");

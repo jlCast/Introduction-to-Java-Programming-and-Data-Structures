@@ -1,6 +1,8 @@
 package chapter13;
 
-public class Rectangle extends GeometricObject {
+import chapter13_exercises.Colorable;
+
+public class Rectangle extends GeometricObject implements Colorable , Comparable <GeometricObject>{
 	private double width;
 	private double height;
 	
@@ -37,4 +39,24 @@ public class Rectangle extends GeometricObject {
 	public String toString() {
 		return "Width: "+width+". Height: "+height;
 	}
+	@Override
+	public void howToColor() {
+		System.out.println("Color both sides x 2");
+	}
+	public int compareTo(GeometricObject o) {
+		if(getArea() > o.getArea())
+			return 1;
+		else if (getArea() < o.getArea())
+			return -1;
+		else
+			return 0;
+	}
+	@Override
+	public boolean equals (Object o) {
+		if (o instanceof Rectangle)
+			return getArea() == ((Rectangle)o).getArea();
+		else
+			return false;
+	}
 }
+
